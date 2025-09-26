@@ -5,29 +5,18 @@
 
 int main(int argc, char *argv[]) {
 	
-	int answer=59;
-	int guess;
-	int count = 0;
-	
-	printf("숫자 맞추기게임! \n");
-	printf("1부터 100 사이 숫자 맞춰보세요. \n");
-	
+ int n;      // 사용자 입력값
+    int sum = 0;  // 합계를 저장 (0으로 초기화)
+    int i;      // 반복문에서 사용할 변수
 
-	do {
-		printf("숫자를 입력하세요:");
-		scanf("%d", &guess);
-		count++;
-		
-		if ( guess> answer) {
-			printf("더 작은 수를 입력하세요\n ");
-		}	
-		else if ( guess< answer ){
-			printf("더 큰 수를 입력하세요\n");
-		}
-	}
-	while ( guess != answer );
-	
-	printf("정답입니다. %d번 만에 맞추셨어요.", count);
-		
-	return 0;
+    printf("정수를 입력하세요: ");
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; i++) {
+        sum += i;       // sum = sum + i 와 같음
+    }
+
+    printf("1부터 %d까지의 합은 %d입니다.\n", n, sum);
+
+    return 0;
 }
