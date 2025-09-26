@@ -5,18 +5,44 @@
 
 int main(int argc, char *argv[]) {
 	
- int n;      // 사용자 입력값
-    int sum = 0;  // 합계를 저장 (0으로 초기화)
-    int i;      // 반복문에서 사용할 변수
+int num1, num2;   
+    char op;           
+    int result;       
 
-    printf("정수를 입력하세요: ");
-    scanf("%d", &n);
+    printf("계산을 입력하세요: ");
+    scanf("%d %c %d", &num1, &op, &num2);
 
-    for (i = 1; i <= n; i++) {
-        sum += i;       // sum = sum + i 와 같음
+    if (op == '+') {
+        result = num1 + num2;
+    }
+    else if (op == '-') {
+        result = num1 - num2;
+    }
+    else if (op == '*') {
+        result = num1 * num2;
+    }
+    else if (op == '/') {
+        if (num2 != 0) {
+            result = num1 / num2;
+        } else {
+            printf("0으로 나눌 수 없습니다.\n");
+            return 0; 
+        }
+    }
+    else if (op == '%') {
+        if (num2 != 0) {
+            result = num1 % num2;
+        } else {
+            printf("0으로 나눌 수 없습니다.\n");
+            return 0;
+        }
+    }
+    else {
+        printf("지원하지 않는 연산자입니다.\n");
+        return 0;
     }
 
-    printf("1부터 %d까지의 합은 %d입니다.\n", n, sum);
+    printf("%d %c %d = %d\n", num1, op, num2, result);
 
     return 0;
 }
