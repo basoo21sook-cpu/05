@@ -5,18 +5,17 @@
 
 int main(int argc, char *argv[]) {
 	
-	int number;
-	
-	printf("정수 하나를 입력하시오: ");
-	scanf("%d", &number);
-	
-	if (number>0)
-		printf("절대값은 %d입니다. \n",number);
-	else if (number<0)
-		printf("절대값은 %d입니다. \n",-number);
-	
-	else
-	printf("절대값은 0 입니다. \n");
-		
+	int count = 0;   
+    int c;            
+    
+    printf("문자열을 입력하세요 : ");
+
+    while ((c = getchar()) != '\n') {   
+        if (c >= '0' && c <= '9')       
+            count++;                   
+    }
+
+    printf("입력한 숫자 문자의 개수는 %d개입니다.\n", count);
+
 	return 0;
 }
