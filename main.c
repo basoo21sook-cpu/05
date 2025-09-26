@@ -5,17 +5,29 @@
 
 int main(int argc, char *argv[]) {
 	
-	int count = 0;   
-    int c;            
-    
-    printf("문자열을 입력하세요 : ");
+	int answer=59;
+	int guess;
+	int count = 0;
+	
+	printf("숫자 맞추기게임! \n");
+	printf("1부터 100 사이 숫자 맞춰보세요. \n");
+	
 
-    while ((c = getchar()) != '\n') {   
-        if (c >= '0' && c <= '9')       
-            count++;                   
-    }
-
-    printf("입력한 숫자 문자의 개수는 %d개입니다.\n", count);
-
+	do {
+		printf("숫자를 입력하세요:");
+		scanf("%d", &guess);
+		count++;
+		
+		if ( guess> answer) {
+			printf("더 작은 수를 입력하세요\n ");
+		}	
+		else if ( guess< answer ){
+			printf("더 큰 수를 입력하세요\n");
+		}
+	}
+	while ( guess != answer );
+	
+	printf("정답입니다. %d번 만에 맞추셨어요.", count);
+		
 	return 0;
 }
